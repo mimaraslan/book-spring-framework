@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+<bean id="personelServisBean" class="com.mimaraslan.PersonelServis">
+		<property name="adi" value="Hakan" />
+		<property name="soyadi" value="Kavçin" />
+		<property name="tecrube" value="2" />
+</bean>
+
+	<bean id="metotCagiriOncesiYapilacaklarBean"
+		class="com.mimaraslan.aop.MetotCagiriOncesiYapilacaklar" />
+
+    <bean id="metotCagiriSonrasiYapilacaklarBean"													
+		class="com.mimaraslan.aop.MetotCagiriSonrasiYapilacaklar" />
+		
+	<bean id="personelServisBeanProxy" 													
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="personelServisBean" />
+		<property name="interceptorNames">
+			<list>
+				<value>metotCagiriOncesiYapilacaklarBean</value>
+				<value>metotCagiriSonrasiYapilacaklarBean</value>
+			</list>
+		</property>
+	</bean>
+</beans>

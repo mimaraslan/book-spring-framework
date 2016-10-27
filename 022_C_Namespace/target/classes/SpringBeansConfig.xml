@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:c="http://www.springframework.org/schema/c" 					     		
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">                                   
+
+    <!-- 
+	<bean id="beanAdres" class="com.mimaraslan.Adres">
+		<property name="sehir" value="Trabzon"/>
+		<property name="semt" value="Akçaköy"/>
+		<property name="mahalle" value="Yeşilyurt "/>
+		<property name="cadde" value="Tanjant"/>
+		<property name="no" value="61"/>
+		<property name="daire" value="4"/>
+	</bean> 
+	-->
+
+	<bean id="beanAdres" class="com.mimaraslan.Adres"
+		p:sehir="Trabzon"
+		p:semt="Akçaköy"
+		p:mahalle="Yeşilyurt"
+		p:cadde="Tanjant"
+		p:no="61"
+		p:daire="4">
+    </bean>	
+
+	<!-- 
+	<bean id="beanCalisan" class="com.mimaraslan.Calisan">
+		<constructor-arg name="adi" value="Ali Osman" />
+		<constructor-arg name="soyadi" index="1"  value="Bilir" />
+		<constructor-arg type="int" value="26" />
+		<constructor-arg index="3" ref="beanAdres" />
+	</bean>
+	-->
+	
+	<!-- 	
+	<bean id="beanCalisan" class="com.mimaraslan.Calisan"
+          c:_0="Ali Osman" 
+          c:_1="Bilir" 
+          c:_2="26" 
+          c:_3-ref="beanAdres">
+	</bean>
+	-->	
+	 	
+	<bean id="beanCalisan" class="com.mimaraslan.Calisan"
+		c:adi="Ali Osman" 
+		c:soyadi="Bilir" 
+		c:yasi="26"
+		c:adres-ref="beanAdres">                                         
+	</bean>
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+

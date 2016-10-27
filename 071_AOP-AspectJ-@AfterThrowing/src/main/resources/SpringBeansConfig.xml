@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"					
+	xsi:schemaLocation="http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="personelServisBean" 
+		class="com.mimaraslan.impl.PersonelServisImpl">	
+		<property name="adi" value="Adnan" />  
+		<property name="soyadi" value="Aydemir" /> 
+		<property name="tecrube" value="8" />	
+	</bean> 
+
+	<bean id="metotCagiriOncesiYapilacaklar"
+	  class="com.mimaraslan.aop.MetotCagiriOncesiYapilacaklar" />      
+
+	<bean id="metotCagiriSonrasiYapilacaklar"
+	  class="com.mimaraslan.aop.MetotCagiriSonrasiYapilacaklar" />  
+	  
+    <bean id="metodunGeriDonusDegeriSonrasiYapilacaklar"
+ class="com.mimaraslan.aop.MetodunGeriDonusDegeriSonrasiYapilacaklar"/>       
+	  
+    <bean id="metotCagiriIstisnaSonrasiYapilacaklar"
+ class="com.mimaraslan.aop.MetotCagiriIstisnaSonrasiYapilacaklar" />	  
+</beans>
+
+
+
+
+
+
+
+

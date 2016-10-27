@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="BeanOgrenci" class="com.mimaraslan.Ogrenci">											 
+		<property name="adi" value="İsmail Sinan" />
+		<property name="soyadi" value="Gülbaş" />
+		<property name="bolumu" value="Yazılım Mühendisliği" />
+		<property name="yasi" value="28" />
+	</bean>
+
+	<bean id="BeanKoleksiyonlar" class="com.mimaraslan.Koleksiyonlar">
+
+		<!-- java.util.List -->
+		<property name="listler">
+			<list>
+				<value>571</value>
+				<ref bean="BeanOgrenci" />
+				<bean class="com.mimaraslan.Ogrenci">
+					<property name="adi" value="İsmail Sinan" />
+					<property name="soyadi" value="Gülbaş" />
+					<property name="bolumu" value="Yazılım" />
+					<property name="yasi" value="28" />
+				</bean>
+			</list>
+		</property>
+
+		<!-- java.util.Set -->
+		<property name="setler">
+			<set>
+				<value>632</value>
+				<ref bean="BeanOgrenci" />
+				<bean class="com.mimaraslan.Ogrenci">
+					<property name="adi" value="Yusuf" />
+					<property name="soyadi" value="Karademir" />
+					<property name="bolumu" value="Öğretim Teknolojileri" />
+					<property name="yasi" value="27" />
+				</bean>
+			</set>
+		</property>
+
+		<!-- java.util.Map -->
+		<property name="mapler">
+			<map>
+				<entry key="Vaadin" value="Ömer Narman" />
+				<entry key="JSP" value-ref="BeanOgrenci" />
+				<entry key="ZK">
+					<bean class="com.mimaraslan.Ogrenci">
+						<property name="adi" value="Ahmet" />
+						<property name="soyadi" value="Alpaslan" />
+						<property name="bolumu" value="Bilgi Sistemleri" />
+						<property name="yasi" value="25" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+
+		<!-- java.util.Properties -->
+		<property name="propertiesler">
+			<props>
+				<prop key="PrimeFaces">Bilal Maskan</prop>
+				<prop key="JSF">Tevfik Öztürk</prop>
+				<prop key="Hibernate">Fırat Akyol</prop>
+				<prop key="Spring">Enes Ataş</prop>
+			</props>
+		</property>
+
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

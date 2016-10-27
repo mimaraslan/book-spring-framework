@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+  <bean id="selam" class="com.mimaraslan.Selam"
+       init-method="init"  
+       destroy-method="destroy">                                            
+                              
+       <property name="mesaj" 
+       value="Güzel gören, güzel düşünür.
+       	Güzel düşünen, hayatından lezzet alır."/>
+   </bean>
+   
+    <bean class="com.mimaraslan.InitSelam" />                             
+    
+</beans>

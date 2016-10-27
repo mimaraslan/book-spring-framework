@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	 <context:annotation-config/> 
+
+	<bean id="dersBean" class="com.mimaraslan.Ders">
+		<property name="puan" value="85" />
+		<property name="ders" value="Matematik" />
+		<!-- <property name="ogrenci" ref="ogrenciBean"/> -->
+	</bean>
+
+	<bean id="ogrenciBean" class="com.mimaraslan.Ogrenci">
+		<property name="adi" value="Sinan" />
+		<property name="soyadi" value="Çağlayan" />
+		<property name="yasi" value="27" />
+	</bean>
+	
+	<bean id="ogrenciBean2" class="com.mimaraslan.Ogrenci">				
+		<property name="adi" value="Eyüp" />
+		<property name="soyadi" value="Akın" />
+		<property name="yasi" value="23" />
+	</bean>
+	
+<bean id="ogrenciBean3" class="com.mimaraslan.Ogrenci">
+		<property name="adi" value="Enes" />
+		<property name="soyadi" value="Karagöz" />
+		<property name="yasi" value="29" />
+	</bean>	
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

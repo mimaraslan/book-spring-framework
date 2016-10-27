@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+   <bean id="beanA" class="com.mimaraslan.A"></bean>
+   
+   
+   <bean id="beanB" class="com.mimaraslan.B" 
+         scope="singleton" lazy-init="true">
+   	
+   	    <constructor-arg ref="beanA"></constructor-arg>
+   </bean>
+   
+ <!-- 
+   <bean id="beanC" class="com.mimaraslan.C">
+	   	<constructor-arg type="int" value="1453" index="1" />
+	   	<constructor-arg type="java.lang.String" value="FSM" index="0" />
+   </bean>
+ -->
+<!-- 
+   <bean id="beanC" class="com.mimaraslan.C">
+	   	<constructor-arg value="1453" index="1" />
+	   	<constructor-arg value="FSM"  index="0" />
+   </bean>
+ --> 
+   <bean id="beanC" class="com.mimaraslan.C">
+	   	<constructor-arg value="1453" name="sayi" />
+	   	<constructor-arg value="FSM" name="mesaj" />
+   </bean>
+   
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

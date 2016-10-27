@@ -1,0 +1,32 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+
+ <bean id="kaynakBean" class="com.mimaraslan.Kaynak" />  
+ 
+   
+ <bean id="listelerBean" class="com.mimaraslan.Listeler">
+	<property name="mapElemani" value="#{kaynakBean.map['Utku Kutlu']}"/>              
+	<property name="listElemani" value="#{kaynakBean.list[4]}" />
+ </bean>
+ 
+                      	 
+<bean id="regExKontrolBean" class="com.mimaraslan.RegExKontrol">
+
+<property name="regEx" 
+value="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		
+<property name="regExSonuc" 
+value="#{(kaynakBean.map['Utku Kutlu'] matches 
+	'^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$'
+  	 )== true ? 'UYGUN.' : 'UYGUN DEĞİL.' }" />
+</bean>
+
+	
+</beans>
+
+
+
+

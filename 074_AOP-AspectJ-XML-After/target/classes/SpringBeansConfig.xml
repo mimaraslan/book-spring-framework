@@ -1,0 +1,59 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"					
+	xsi:schemaLocation="http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="personelServisBean" 
+		class="com.mimaraslan.impl.PersonelServisImpl">	
+		<property name="adi" value="Etem" />  
+		<property name="soyadi" value="Yaroğlu" />  
+		<property name="tecrube" value="2" />	
+	</bean> 
+
+<bean id="metotCagiriOncesiYapilacaklar"
+class="com.mimaraslan.aop.MetotCagiriOncesiYapilacaklar" /> 
+
+<bean id="metotCagiriSonrasiYapilacaklar"
+class="com.mimaraslan.aop.MetotCagiriSonrasiYapilacaklar" />  
+	  
+    <aop:config>
+    
+		<aop:aspect id="aspects" ref="metotCagiriOncesiYapilacaklar">
+		  <aop:pointcut id="pointCutBefore"
+expression="execution(* com.mimaraslan.IPersonelServis.selamVer(..))"/>
+		  <aop:before method="ilkGorev" pointcut-ref="pointCutBefore" />                    
+		</aop:aspect>
+		
+		<aop:aspect id="aspects" ref="metotCagiriSonrasiYapilacaklar">
+			<aop:pointcut id="pointCutAfter"
+expression="execution(* com.mimaraslan.IPersonelServis.selamVer(..))" />
+			<aop:after method="sonGorev" pointcut-ref="pointCutAfter" />         
+		</aop:aspect>
+
+	</aop:config>
+	
+</beans>
+
+
+<!-- 
+
+
+<bean id="metodunGeriDonusDegeriSonrasiYapilacaklar"
+class="com.mimaraslan.aop.MetodunGeriDonusDegeriSonrasiYapilacaklar"/>       
+	  
+<bean id="metotCagiriIstisnaSonrasiYapilacaklar"
+ class="com.mimaraslan.aop.MetotCagiriIstisnaSonrasiYapilacaklar" />	  
+
+<bean id="cagirilanMetodunOncesiVeSonrasiOzellikleri"
+ class="com.mimaraslan.aop.CagirilanMetodunOncesiVeSonrasiOzellikleri"/>	
+ -->
+
+
+
+
+

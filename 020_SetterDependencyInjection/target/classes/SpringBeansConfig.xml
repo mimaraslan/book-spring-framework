@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+   <bean id="beanA" class="com.mimaraslan.A" ></bean>
+   
+   
+   <bean id="beanB" class="com.mimaraslan.B" scope="singleton"             
+   	lazy-init="true">
+   	
+   	    <constructor-arg ref="beanA"></constructor-arg>
+
+   	    <property name="mesaj" value="FSM"></property>
+   	    <property name="sayi" value="1453"></property>
+
+   	    <property name="aNesnesi" ref="beanA"></property>                      
+   </bean>
+
+</beans>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

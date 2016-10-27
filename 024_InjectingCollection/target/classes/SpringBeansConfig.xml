@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"				     		
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">                                    
+ 
+   <bean id="beanOgrenci" class="com.mimaraslan.Ogrenci">                                          
+
+      <property name="ogrenciList">
+        <list>
+           <value>Veli Çeri</value>
+           <value>Alican Akkuş</value>
+           <value>Emer Pîremêrd</value>
+        </list>
+      </property>
+      
+
+     <property name="ogrenciSet">
+        <set>
+     	   <value>Veli Çeri</value>
+           <value>Alican Akkuş</value>
+           <value>Emer Pîremêrd</value>
+        </set>
+      </property>
+      
+
+     <property name="ogrenciMap">
+        <map>
+           <entry key="1" value="Veli Çeri"/>
+           <entry key="2" value="Alican Akkuş"/>
+           <entry key="3" value="Emer Pîremêrd"/>
+        </map>
+      </property>
+
+
+     <property name="ogrenciProp">
+        <props>
+           <prop key="Dürüst">Veli Çeri</prop>
+           <prop key="Çay Sever">Alican Akkuş</prop>
+           <prop key="Saygılı">Emer Pîremêrd</prop>
+        </props>
+      </property>
+
+   </bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

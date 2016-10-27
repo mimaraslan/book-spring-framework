@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+ 
+ 
+	<bean id="kitapBean" class="com.mimaraslan.Kitap">
+		<property name="eserISBN" value="57163212991453" />
+		<property name="eserAdi" value="Spring Framework" />
+	</bean>
+	
+ 
+	<bean id="yazarBean" class="com.mimaraslan.Yazar">
+		<property name="adi" value="Mimar" />
+		<property name="soyadi" value="Aslan" />
+		<property name="kitap" value="#{kitapBean}" />
+		<property name="kitapAdi" value="#{kitapBean.eserAdi}" />                      
+	</bean>
+	
+	
+</beans>

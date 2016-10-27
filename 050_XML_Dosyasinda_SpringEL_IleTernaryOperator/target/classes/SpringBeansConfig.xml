@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+ 
+<bean id="sayilarBean" class="com.mimaraslan.Sayilar">
+	<property name="sayi1" value="571" />
+	<property name="sayi2" value="1299" />
+	<property name="sayi3" value="1453" />
+	<property name="sayi4" value="1071" />
+	<property name="sayi5" value="632" />
+</bean>
+	
+<bean id="ternaryOperatorBean" class="com.mimaraslan.TernaryOperator">					
+  <property name="kontrol" 
+	value="#{sayilarBean.sayi1 lt sayilarBean.sayi4 ? true : false}" />
+</bean>
+ 	 
+</beans>

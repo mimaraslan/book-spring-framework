@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	    <import resource="alis/Spring-AlisModulu.xml"/>
+        <import resource="musteri/Spring-AdresModulu.xml"/>
+        <import resource="musteri/Spring-MusteriModulu.xml"/>
+        <import resource="satis/Spring-SatisModulu.xml"/>
+        <import resource="veritabani/Spring-BaglantiModulu.xml"/>
+		<import resource="yonetim/Spring-YonetimModulu.xml"/>
+		<import resource="yonetim/haklar/Spring-HaklarModulu.xml"/>                       
+		 
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

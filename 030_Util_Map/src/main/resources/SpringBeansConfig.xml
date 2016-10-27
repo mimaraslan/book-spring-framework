@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="BeanSehir" class="com.mimaraslan.Sehir">
+		<property name="mapimiz">
+			<util:map map-class="java.util.TreeMap">                           
+				<entry key="Ankara" value="06" />
+				<entry key="Nevşehir" value="50" />
+				<entry key="Trabzon" value="61" />
+				<entry key="Ağrı" value="04" />
+				<entry key="Balıkesir" value="10" />
+			</util:map>
+		</property>
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

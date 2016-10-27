@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+ 
+<bean id="sayilarBean" class="com.mimaraslan.Sayilar">
+	<property name="sayi1" value="571" />
+	<property name="sayi2" value="1299" />
+	<property name="sayi3" value="1453" />
+	<property name="sayi4" value="1071" />
+	<property name="sayi5" value="632" />
+</bean>
+	
+<bean id="operatorlerBean" class="com.mimaraslan.Operatorler">
+<property name="equalTest" value="#{sayilarBean.sayi1 == 571}" />
+<property name="notEqualTest" value="#{sayilarBean.sayi2 != sayilarBean.sayi2}" />
+<property name="lessThanTest" value="#{sayilarBean.sayi3 lt sayilarBean.sayi1}" />
+<property name="lessThanOrEqualTest" value="#{sayilarBean.sayi4 le sayilarBean.sayi2}" />
+<property name="greaterThanTest" value="#{sayilarBean.sayi5 > sayilarBean.sayi5}" />
+<property name="greaterThanOrEqualTest" value="#{sayilarBean.sayi1 >= sayilarBean.sayi3}" />
+<property name="andTest" value="#{sayilarBean.sayi2 == 571 and sayilarBean.sayi2 lt 571}" />
+<property name="orTest" value="#{sayilarBean.sayi3 == 1299 or sayilarBean.sayi4 lt 1071}" />
+<property name="notTest" value="#{!(sayilarBean.sayi4 == 632)}" />
+<property name="addTest" value="#{sayilarBean.sayi5 + sayilarBean.sayi2}" />
+<property name="addStringTest" value="#{'Selam' + '@' + 'SpringEL'}" />
+<property name="subtractionTest" value="#{sayilarBean.sayi1 - sayilarBean.sayi3}" />
+<property name="multiplicationTest" value="#{sayilarBean.sayi2 * sayilarBean.sayi4}" />
+<property name="divisionTest" value="#{sayilarBean.sayi3 / sayilarBean.sayi2}" />
+<property name="modulusTest" value="#{sayilarBean.sayi4 % sayilarBean.sayi1}" />
+<property name="exponentialPowerTest" value="#{sayilarBean.sayi5 ^ 2}" />
+	</bean>
+ 	
+</beans>
